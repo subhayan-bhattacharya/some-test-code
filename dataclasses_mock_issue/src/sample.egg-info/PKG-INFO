@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: sample
+Version: 0.0.1
+Summary: Test package to test the issues with dataclasses during mocking
+Home-page: UNKNOWN
+Author: Subhayan Bhattacharya
+Author-email: subhayan.here@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
