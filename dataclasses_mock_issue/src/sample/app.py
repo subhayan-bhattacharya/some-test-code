@@ -5,11 +5,12 @@ import flask
 import flask_restful
 
 
-def main():
-    subhayan = sample.resource.Person(name="Subhayan", year=1984)
-    resource_cls_kwargs = dataclasses.asdict(
-        sample.configuration.ResourceClsKwargs(person=subhayan)
-    )
+def main(person):
+    # resource_cls_kwargs = dataclasses.asdict(
+    #     sample.configuration.ResourceClsKwargs(person=person)
+    # )
+    # resource_cls_kwargs = sample.configuration.ResourceClsKwargs(person=person)._asdict()
+    resource_cls_kwargs = sample.configuration.ResourceClsKwargs(person=person).asdict()
     app = flask.Flask(__name__)
     api = flask_restful.Api(app)
     api.add_resource(
@@ -21,5 +22,6 @@ def main():
 
 
 if __name__ == "__main__":
-    app = main()
+    subhayan = sample.resource.Person(name="Subhayan", year=1984)
+    app = main(subhayan)
     app.run(debug=True)
